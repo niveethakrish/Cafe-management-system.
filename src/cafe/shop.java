@@ -86,6 +86,7 @@ public class shop extends javax.swing.JFrame {
     }
     
      public void reset() {
+         jButton1.setEnabled(true);
         jSpinner1.setValue(0);
         jSpinner2.setValue(0);
         jSpinner3.setValue(0);
@@ -302,11 +303,15 @@ public class shop extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel5))
                 .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cofee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSpinner1)
-                    .addComponent(jCheckBox1)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jCheckBox1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jSpinner1)
+                        .addContainerGap())))
             .addComponent(jLabel3)
             .addComponent(jLabel4)
             .addComponent(imagelayer, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1036,7 +1041,7 @@ System.exit(0);            // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-if(total !=0 && jButton1.isEnabled()){
+if(total !=0 ){
 try{
     jTextArea1.print();
 }
@@ -1058,7 +1063,8 @@ jTextArea1.setText(jTextArea1.getText() + " \n**********************************
                 + "\nSubTotal:\t\t" + subtotal + "\nTax:\t'\t" + tax + "₹" + "\nTotal\t\t" + total + "\n");    
 jTextField3.setText(String.valueOf(subtotal));
 jTextField4.setText(String.valueOf(tax));
-jTextField5.setText(String.valueOf(total));//TODO add your handling code here:
+jTextField5.setText(String.valueOf(total));
+jButton1.setEnabled(false);//TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
